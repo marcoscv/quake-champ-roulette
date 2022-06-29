@@ -1,6 +1,10 @@
 # quake-champ-roulette
 Quake champions champ roulette to streamings
 
+## Preview:
+
+https://www.twitch.tv/q3macross/clip/PatientYawningTrollTBCheesePull-dB8HK6MR7KmOLRDr
+
 ## How to add this animation to Streamlabs or OBS
 
 - Download the html file
@@ -13,6 +17,6 @@ Quake champions champ roulette to streamings
 
 Now when you changhe to this scene roulette will work, then you can change to the original game scene
 
-## Preview:
+## Live example
 
-https://www.twitch.tv/q3macross/clip/PatientYawningTrollTBCheesePull-dB8HK6MR7KmOLRDr
+https://codepen.io/marcoscv/full/jOzOeaE
