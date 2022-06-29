@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>quake champions random champ</title>
+   </head>
+   <body>
+      <div class="champions bg">
+         <div class="Nyx champ" data-title="Nyx"></div>
+         <div class="Anarki champ" data-title="Anarki"></div>
+         <div class="Slash champ" data-title="Slash"></div>
+         <div class="Athena champ" data-title="Athena"></div>
+         <div class="Ranger champ" data-title="Ranger"></div>
+         <div class="Visor champ" data-title="Visor"></div>
+         <div class="Galena champ" data-title="Galena"></div>
+         <div class="BJ champ" data-title="BJ Blazkowicz"></div>
+         <div class="DOOM champ" data-title="DOOM Slayer"></div>
+         <div class="Strogg champ" data-title="Strogg &amp; Peeker"></div>
+         <div class="DeathKnight champ" data-title="Death Knight"></div>
+         <div class="Eisen champ" data-title="Eisen"></div>
+         <div class="Scalebearer champ" data-title="Scalebearer"></div>
+         <div class="Clutch champ" data-title="Clutch"></div>
+         <div class="Sorlag champ" data-title="Sorlag"></div>
+         <div class="Keel champ" data-title="Keel"></div>
+      </div>
+      <script>
+         function reselectItem() {
+             var items = document.getElementsByClassName('champ');
+             var itemSelected = items[Math.floor(Math.random() * items.length)];
+             itemSelected.classList.remove('champ');
+             itemSelected.classList.add('champRemoved');
+         
+             if (items.length >= 1) {
+                 itemSelected.classList.add('animate__animated','animate__zoomOutDown');
+                 setTimeout(() => {reselectItem();}, 80);
+             } else {
+                 setTimeout(() => {
+                     itemSelected.classList.add('animate__animated','animate__flip','size_x2');
+                     setTimeout(() => {
+                         itemSelected.classList.remove('animate__animated','animate__flip');
+                     }, 2000);
+                     setTimeout(() => {
+                         itemSelected.classList.add('animate__animated','animate__zoomOutUp');
+                     }, 3000);
+                     setTimeout(() => {
+                         var champis = document.getElementsByClassName('champions');
+                         champis[0].classList.remove('bg');
+                     }, 4000);
+                 }, 700);
+             }
+         }
+         
+         setTimeout(() => {
+             reselectItem();
+         }, 1000);
+      </script>
+
+      <style>
+         html {
+           height: 100%;
+           overflow: hidden;
+         }
+         html, body {
+           display: grid;
+         }
+         body {
+           background-size: 100% 100%;
+         }
+         .champions {
+           margin: 5vh 7vw;
+           padding: 1.9vh 1.8vw;
+           display: grid;
+           grid-template-columns: repeat(16, 1fr);
+           grid-template-rows: 1fr;
+           grid-column-gap: 2px;
+           align-self: end;
+           text-align: center;
+         }
+         .champions.bg {
+           transition: background-color 2s ease;
+           background-color: rgba(0, 0, 0, 0.8);
+         }
+         .champions > div {
+           border: 2px solid red;
+           height: 11.2vh;
+           position: relative;
+           background-size: cover;
+         }
+         .champions > div:after {
+           color: #fff;
+           text-shadow: #fff 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px;
+           font-family: sans-serif;
+           font-size: 150%;
+           display: none;
+           content: attr(data-title);
+           white-space: nowrap;
+           position: absolute;
+           transform: translate(-50%, -140%);
+           left: 50%;
+         }
+         .size_x2:after {
+          display: block !important;
+         }
+         .Nyx {
+          background-image: url(https://quake-stats.bethesda.net/champions/nyx.png);
+         }
+         .Anarki {
+          background-image: url(https://quake-stats.bethesda.net/champions/anarki.png);
+         }
+         .Slash {
+          background-image: url(https://quake-stats.bethesda.net/champions/slash.png);
+         }
+         .Athena {
+          background-image: url(https://quake-stats.bethesda.net/champions/athena.png);
+         }
+         .Ranger {
+          background-image: url(https://quake-stats.bethesda.net/champions/ranger.png);
+         }
+         .Visor {
+          background-image: url(https://quake-stats.bethesda.net/champions/visor.png);
+         }
+         .Galena {
+          background-image: url(https://quake-stats.bethesda.net/champions/galena.png);
+         }
+         .BJ {
+          background-image: url(https://quake-stats.bethesda.net/champions/bj.png);
+         }
+         .DOOM {
+          background-image: url(https://quake-stats.bethesda.net/champions/doom.png);
+         }
+         .Strogg {
+          background-image: url(https://quake-stats.bethesda.net/champions/strogg.png);
+         }
+         .DeathKnight {
+          background-image: url(https://quake-stats.bethesda.net/champions/deathknight.png);
+         }
+         .Eisen {
+          background-image: url(https://quake-stats.bethesda.net/champions/eisen.png);
+         }
+         .Scalebearer {
+          background-image: url(https://quake-stats.bethesda.net/champions/scalebearer.png);
+         }
+         .Clutch {
+          background-image: url(https://quake-stats.bethesda.net/champions/clutch.png);
+         }
+         .Sorlag {
+          background-image: url(https://quake-stats.bethesda.net/champions/sorlag.png);
+         }
+         .Keel {
+          background-image: url(https://quake-stats.bethesda.net/champions/keel.png);
+         }
+         .animate__animated {
+           -webkit-animation-duration: 1s;
+           animation-duration: 1s;
+           -webkit-animation-duration: 1s;
+           animation-duration: 1s;
+           -webkit-animation-fill-mode: both;
+           animation-fill-mode: both
+         }
+         @-webkit-keyframes flip {
+         0% {
+           -webkit-animation-timing-function: ease-out;
+           animation-timing-function: ease-out;
+           -webkit-transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-1turn);
+           transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-1turn)
+         }
+         40% {
+           -webkit-animation-timing-function: ease-out;
+           animation-timing-function: ease-out;
+           -webkit-transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-190deg);
+           transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-190deg)
+         }
+         50% {
+           -webkit-animation-timing-function: ease-in;
+           animation-timing-function: ease-in;
+           -webkit-transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-170deg);
+           transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-170deg)
+         }
+         80% {
+           -webkit-animation-timing-function: ease-in;
+           animation-timing-function: ease-in;
+           -webkit-transform: perspective(400px) scale3d(.95, .95, .95) translateZ(0) rotateY(0deg);
+           transform: perspective(400px) scale3d(.95, .95, .95) translateZ(0) rotateY(0deg)
+         }
+         to {
+           -webkit-animation-timing-function: ease-in;
+           animation-timing-function: ease-in;
+           -webkit-transform: perspective(400px) scaleX(1) translateZ(0) rotateY(0deg);
+           transform: perspective(400px) scaleX(1) translateZ(0) rotateY(0deg)
+         }
+         }
+         @keyframes flip {
+         0% {
+           -webkit-animation-timing-function: ease-out;
+           animation-timing-function: ease-out;
+           -webkit-transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-1turn);
+           transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-1turn)
+         }
+         40% {
+           -webkit-animation-timing-function: ease-out;
+           animation-timing-function: ease-out;
+           -webkit-transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-190deg);
+           transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-190deg)
+         }
+         50% {
+           -webkit-animation-timing-function: ease-in;
+           animation-timing-function: ease-in;
+           -webkit-transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-170deg);
+           transform: perspective(400px) scaleX(1) translateZ(150px) rotateY(-170deg)
+         }
+         80% {
+           -webkit-animation-timing-function: ease-in;
+           animation-timing-function: ease-in;
+           -webkit-transform: perspective(400px) scale3d(.95, .95, .95) translateZ(0) rotateY(0deg);
+           transform: perspective(400px) scale3d(.95, .95, .95) translateZ(0) rotateY(0deg)
+         }
+         to {
+          -webkit-animation-timing-function: ease-in;
+           animation-timing-function: ease-in;
+           -webkit-transform: perspective(400px) scaleX(1) translateZ(0) rotateY(0deg);
+           transform: perspective(400px) scaleX(1) translateZ(0) rotateY(0deg)
+         }
+         }
+         .animate__animated.animate__flip {
+           -webkit-animation-name: flip;
+           animation-name: flip;
+           -webkit-backface-visibility: visible;
+           backface-visibility: visible
+         }
+         @-webkit-keyframes zoomOutUp {
+         40% {
+           -webkit-animation-timing-function: cubic-bezier(.55, .055, .675, .19);
+           animation-timing-function: cubic-bezier(.55, .055, .675, .19);
+           opacity: 1;
+           -webkit-transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+           transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0)
+         }
+         to {
+           -webkit-animation-timing-function: cubic-bezier(.175, .885, .32, 1);
+           animation-timing-function: cubic-bezier(.175, .885, .32, 1);
+           opacity: 0;
+           -webkit-transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0);
+           transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0)
+         }
+         }
+         @keyframes zoomOutUp {
+         40% {
+           -webkit-animation-timing-function: cubic-bezier(.55, .055, .675, .19);
+           animation-timing-function: cubic-bezier(.55, .055, .675, .19);
+           opacity: 1;
+           -webkit-transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+           transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0)
+         }
+         to {
+           -webkit-animation-timing-function: cubic-bezier(.175, .885, .32, 1);
+           animation-timing-function: cubic-bezier(.175, .885, .32, 1);
+           opacity: 0;
+           -webkit-transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0);
+           transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0)
+         }
+         }
+         .animate__zoomOutUp {
+           -webkit-animation-name: zoomOutUp;
+           animation-name: zoomOutUp;
+           -webkit-transform-origin: center bottom;
+           transform-origin: center bottom
+         }
+         @-webkit-keyframes zoomOutDown {
+         40% {
+           -webkit-animation-timing-function: cubic-bezier(.55, .055, .675, .19);
+           animation-timing-function: cubic-bezier(.55, .055, .675, .19);
+           opacity: 1;
+           -webkit-transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
+           transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0)
+         }
+         to {
+           -webkit-animation-timing-function: cubic-bezier(.175, .885, .32, 1);
+           animation-timing-function: cubic-bezier(.175, .885, .32, 1);
+           opacity: 0;
+           -webkit-transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);
+           transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0)
+         }
+         }
+         @keyframes zoomOutDown {
+         40% {
+           -webkit-animation-timing-function: cubic-bezier(.55, .055, .675, .19);
+           animation-timing-function: cubic-bezier(.55, .055, .675, .19);
+           opacity: 1;
+           -webkit-transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
+           transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0)
+         }
+         to {
+           -webkit-animation-timing-function: cubic-bezier(.175, .885, .32, 1);
+           animation-timing-function: cubic-bezier(.175, .885, .32, 1);
+           opacity: 0;
+           -webkit-transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);
+           transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0)
+         }
+         }
+         .animate__zoomOutDown {
+           -webkit-animation-name: zoomOutDown;
+           animation-name: zoomOutDown;
+           -webkit-transform-origin: center bottom;
+           transform-origin: center bottom
+         }
+      </style>
+   </body>
+</html>
