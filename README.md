@@ -1,5 +1,5 @@
 # quake-champ-roulette
-Quake champions champ roulette to streamings
+Quake champions champ roulette for streamings
 
 ## Preview:
 
@@ -7,7 +7,7 @@ https://www.twitch.tv/q3macross/clip/PatientYawningTrollTBCheesePull-dB8HK6MR7Km
 
 ## How to add this animation to Streamlabs or OBS
 
-- Download the html file
+- Download the [html file](https://raw.githubusercontent.com/marcoscv/quake-champ-roulette/main/champ-random.html)
 - Duplicate your game scene
 - remove transitions between scenes if needed
 - Add to this new scene a new resource type browser
